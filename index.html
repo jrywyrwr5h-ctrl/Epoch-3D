@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Viewer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="brand hidden" id="brand">EPOCH 3D</div>
+    <div class="modal" id="modelModal">
+      <div class="modal-hero">EPOCH 3D</div>
+      <div class="modal-groups">
+        <div class="modal-group">
+          <div class="modal-group-title">Jagers & boeren</div>
+          <div class="modal-options">
+            <button class="option" data-model="models/Neanderthaler/scene.gltf">Neanderthaler</button>
+            <button class="option" data-model="models/Sapien/scene.gltf">Sapien</button>
+          </div>
+        </div>
+        <div class="modal-group">
+          <div class="modal-group-title">Grieken & Romeinen</div>
+          <div class="modal-options">
+            <button class="option" data-model="models/rome_helmet.glb">Romeinse helm</button>
+            <button class="option" data-model="models/Nap/scene.gltf">Nap (buste)</button>
+          </div>
+        </div>
+        <div class="modal-group">
+          <div class="modal-group-title">Monniken & Ridders</div>
+          <div class="modal-options">
+            <button class="option option-soon" disabled>Binnenkort beschikbaar</button>
+          </div>
+        </div>
+        <div class="modal-group">
+          <div class="modal-group-title">Steden & staten</div>
+          <div class="modal-options">
+            <button class="option option-soon" disabled>Binnenkort beschikbaar</button>
+          </div>
+        </div>
+        <div class="modal-group">
+          <div class="modal-group-title">Ontdekkers & hervormers</div>
+          <div class="modal-options">
+            <button class="option option-soon" disabled>Binnenkort beschikbaar</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-hint">Tip: je kunt later altijd wisselen via de dropdown linksboven.</div>
+    </div>
+    <div class="views">
+      <div class="view" id="viewA">
+        <div class="model-name" id="modelNameA">Nap</div>
+        <div class="hud">
+          <div class="pill pill-stack">
+            <div class="pill-row">
+              <select id="modelSelectA" class="visually-hidden">
+                <option value="models/Nap/scene.gltf">Napoleon</option>
+                <option value="models/rome_helmet.glb">Romeinse helm</option>
+                <option value="models/Neanderthaler/scene.gltf">Neanderthaler</option>
+                <option value="models/Sapien/scene.gltf">Sapien</option>
+              </select>
+            </div>
+            <div class="pill-row">
+              <button class="add-compare" id="addCompare" title="Vergelijk met tweede model">
+                <span class="add-icon">⇄</span>
+                <span class="add-text">Vergelijk</span>
+              </button>
+            </div>
+            <div class="pill-row">
+              <div class="tip-inline hidden" id="tipCompare">↺ Vergelijk dit model met een ander model</div>
+            </div>
+          </div>
+        </div>
+        <div class="progress-overlay hidden" id="progressA">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFillA"></div>
+          </div>
+        </div>
+        <div class="tip-bubble hidden" id="tipOrbit">Sleep met muis of touch om 360° te draaien</div>
+      </div>
+      <div class="view hidden" id="viewB">
+        <div class="model-name" id="modelNameB">Kies model</div>
+        <div class="hud hud-right">
+          <div class="pill pill-stack">
+            <div class="pill-row">
+              <select id="modelSelectB" class="visually-hidden">
+                <option value="models/Nap/scene.gltf">Napoleon</option>
+                <option value="models/rome_helmet.glb">Romeinse helm</option>
+                <option value="models/Neanderthaler/scene.gltf">Neanderthaler</option>
+                <option value="models/Sapien/scene.gltf">Sapien</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="progress-overlay hidden" id="progressB">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFillB"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="reset-compare hidden" id="resetCompare" title="Reset vergelijking">Reset</button>
+    <button class="theme-fab" id="themeToggle" title="Toggle light/dark">
+      <span class="theme-icon" id="themeIcon">☀</span>
+    </button>
+    <div class="onboarding hidden" id="onboarding">
+      <div class="onboarding-card">
+        <div class="onboarding-title">Welkom bij EPOCH 3D</div>
+        <div class="onboarding-tips">
+          <div class="tip">Draaien: klik en sleep rond het model</div>
+          <div class="tip">Zoomen: scroll of pinch voor in/uit</div>
+          <div class="tip">Kies model: open het overzicht en selecteer</div>
+          <div class="tip">Vergelijk: voeg een tweede view toe en kies nog een model</div>
+        </div>
+        <button class="onboarding-close" id="closeOnboarding">Aan de slag</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
